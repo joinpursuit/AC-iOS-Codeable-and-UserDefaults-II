@@ -12,9 +12,134 @@
 2. Understand that `UserDefaults` is a light-weight, persistant storage option for small amounts of data that relate to how your app should be configured, based on the user's selection/choices.
 3. Become with the `Codable` protocol that allows for easy conversion between Swift objects and storeable `Data`
 
-
 ---
-###  1. `Codable` with `JSON`
+###  1. `JSONDecoder` and `Codable`
+
+`Codeable` makes a world of difference when it comes to working with JSON. Rather than using our old friend `JSONSerialization`, we use `JSONDecoder` when we can guarantee that the object we're creating conforms to `Codable`. Let's start off with a simple eample using another old friend, `Cat`! (conveniently provided as its own file in the starter project):
+
+```swift
+struct Cat: Codable {
+	let name: String
+	let breed: String
+	let snack: String
+}
+```
+
+We'll be using the provided `CatRequester` to make our API requests. At the top of the class you'll notice a list of `URL` to use for various examples:
+
+> TODO: ADD MORE
+
+```swift
+	let example1URL = URL(string: "https://api.myjson.com/bins/1h4707")!
+	let example2URL = URL(string: "https://api.myjson.com/bins/fq67r")!
+```
+
+We're first going fill out the function labeled `makeBasicCatRequest` and make a request using `example1URL`. If we plug in `example1URL` into Postman, we get
+
+```json
+{
+    "name": "Miley",
+    "breed": "American Shorthair",
+    "snack": "Chicken"
+}
+```
+
+The key to using a model that conforms to `Codable` along with `JSONDecoder` is to ensure that the names of instance properties of the model match the keys in the JSON response. Our `Cat` model has three properties, `name, breed, snack` which correspond to the keys being returned in the JSON response, `name, breed` and snack. You don't have to know the full details yet on how this works, but just understand that this is how you make this kind of decoding work.
+
+Now, we'll do a basic `URLSession` data task to make a model:
+
+```swift
+func makeBasicCatRequest() {
+	urlSession.dataTask(with: example1URL) { (data: Data?, _, _) in
+		if data != nil {
+			do {
+				let cat = try JSONDecoder().decode(Cat.self, from: data!)
+				print("\n\nNice to meet you, I'm ", cat.name)
+			}
+			catch {
+				print("Error converting Data into Cat!", error)
+			}
+		}
+	}.resume()
+}
+```
+
+Ok, now replace `example1URL` with `example2URL` and observe the difference. Putting in `example2URL` into Postman gives us:
+
+```json
+{
+    "fullname": "Miley",
+    "breed": "American Shorthair",
+    "snack": "Chicken"
+}
+```
+
+With `fullname` no longer matching a `Cat.name` property, attempting to decode results in an error.
+
+> TODO: add more examples
+> - Nested example
+> - Array Example
+> Add exercises similar to part 1, host json on myjson
+
+
+# 3
+
+```json
+{
+  "cat": {
+    "name": "Miley",
+    "breed": "American Shorthair",
+    "snack": "Chicken"
+  }
+}
+```
+
+# 4
+
+```json
+{
+  "cats": [
+    {
+      "name": "Miley",
+      "breed": "American Shorthair",
+      "snack": "Chicken"
+    },
+    {
+      "name": "Bale",
+      "breed": "Russian Blue",
+      "snack": "Kibble"
+    }
+  ]
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 2. RandomUser API and `Codable`
 
 Now for some real magic: we can use Codable to serialize and deserialize JSON incredibly easily.
 

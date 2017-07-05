@@ -13,6 +13,8 @@
 		141BFD531F0D5F8A00D4533B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141BFD521F0D5F8A00D4533B /* Assets.xcassets */; };
 		141BFD561F0D5F8A00D4533B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141BFD541F0D5F8A00D4533B /* LaunchScreen.storyboard */; };
 		141BFD611F0D5F8A00D4533B /* Codeable_and_UserDefaults_IITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BFD601F0D5F8A00D4533B /* Codeable_and_UserDefaults_IITests.swift */; };
+		141BFD6D1F0D82BA00D4533B /* CatRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BFD6C1F0D82BA00D4533B /* CatRequester.swift */; };
+		141BFD6F1F0D831300D4533B /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BFD6E1F0D831300D4533B /* Cat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		141BFD5C1F0D5F8A00D4533B /* Codeable and UserDefaults IITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Codeable and UserDefaults IITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		141BFD601F0D5F8A00D4533B /* Codeable_and_UserDefaults_IITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codeable_and_UserDefaults_IITests.swift; sourceTree = "<group>"; };
 		141BFD621F0D5F8A00D4533B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		141BFD6C1F0D82BA00D4533B /* CatRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRequester.swift; sourceTree = "<group>"; };
+		141BFD6E1F0D831300D4533B /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +81,11 @@
 		141BFD4A1F0D5F8A00D4533B /* Codeable and UserDefaults II */ = {
 			isa = PBXGroup;
 			children = (
-				141BFD4B1F0D5F8A00D4533B /* AppDelegate.swift */,
 				141BFD4D1F0D5F8A00D4533B /* ViewController.swift */,
-				141BFD4F1F0D5F8A00D4533B /* Main.storyboard */,
-				141BFD521F0D5F8A00D4533B /* Assets.xcassets */,
-				141BFD541F0D5F8A00D4533B /* LaunchScreen.storyboard */,
 				141BFD571F0D5F8A00D4533B /* Info.plist */,
+				141BFD6B1F0D820500D4533B /* Supporting Files */,
+				141BFD6C1F0D82BA00D4533B /* CatRequester.swift */,
+				141BFD6E1F0D831300D4533B /* Cat.swift */,
 			);
 			path = "Codeable and UserDefaults II";
 			sourceTree = "<group>";
@@ -94,6 +97,17 @@
 				141BFD621F0D5F8A00D4533B /* Info.plist */,
 			);
 			path = "Codeable and UserDefaults IITests";
+			sourceTree = "<group>";
+		};
+		141BFD6B1F0D820500D4533B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				141BFD4B1F0D5F8A00D4533B /* AppDelegate.swift */,
+				141BFD4F1F0D5F8A00D4533B /* Main.storyboard */,
+				141BFD521F0D5F8A00D4533B /* Assets.xcassets */,
+				141BFD541F0D5F8A00D4533B /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141BFD6F1F0D831300D4533B /* Cat.swift in Sources */,
+				141BFD6D1F0D82BA00D4533B /* CatRequester.swift in Sources */,
 				141BFD4E1F0D5F8A00D4533B /* ViewController.swift in Sources */,
 				141BFD4C1F0D5F8A00D4533B /* AppDelegate.swift in Sources */,
 			);
@@ -227,6 +243,7 @@
 				141BFD501F0D5F8A00D4533B /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		141BFD541F0D5F8A00D4533B /* LaunchScreen.storyboard */ = {
@@ -235,6 +252,7 @@
 				141BFD551F0D5F8A00D4533B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -418,6 +436,7 @@
 				141BFD671F0D5F8A00D4533B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		141BFD681F0D5F8A00D4533B /* Build configuration list for PBXNativeTarget "Codeable and UserDefaults IITests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +445,7 @@
 				141BFD6A1F0D5F8A00D4533B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

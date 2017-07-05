@@ -12,10 +12,36 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
-
+	
+	// Example URLs
+	
+	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		struct UserDecoder: Codable {
 			let results: [NameDecoder]
@@ -79,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				}.resume()
 		}
 		
-		retrieveUser()
+//		retrieveUser()
 		
 		return true
 	}
