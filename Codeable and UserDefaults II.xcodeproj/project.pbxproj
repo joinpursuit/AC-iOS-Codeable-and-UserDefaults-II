@@ -15,6 +15,8 @@
 		141BFD611F0D5F8A00D4533B /* Codeable_and_UserDefaults_IITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BFD601F0D5F8A00D4533B /* Codeable_and_UserDefaults_IITests.swift */; };
 		141BFD6D1F0D82BA00D4533B /* CatRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BFD6C1F0D82BA00D4533B /* CatRequester.swift */; };
 		141BFD6F1F0D831300D4533B /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BFD6E1F0D831300D4533B /* Cat.swift */; };
+		1459C1F21F1006A9008B6262 /* Pods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C1F11F1006A9008B6262 /* Pods.swift */; };
+		1459C1F41F1006D5008B6262 /* PodRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C1F31F1006D5008B6262 /* PodRequester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		141BFD621F0D5F8A00D4533B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		141BFD6C1F0D82BA00D4533B /* CatRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRequester.swift; sourceTree = "<group>"; };
 		141BFD6E1F0D831300D4533B /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		1459C1F11F1006A9008B6262 /* Pods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pods.swift; sourceTree = "<group>"; };
+		1459C1F31F1006D5008B6262 /* PodRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodRequester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				141BFD571F0D5F8A00D4533B /* Info.plist */,
 				141BFD6B1F0D820500D4533B /* Supporting Files */,
 				141BFD6C1F0D82BA00D4533B /* CatRequester.swift */,
+				1459C1F31F1006D5008B6262 /* PodRequester.swift */,
+				1459C1F11F1006A9008B6262 /* Pods.swift */,
 				141BFD6E1F0D831300D4533B /* Cat.swift */,
 			);
 			path = "Codeable and UserDefaults II";
@@ -211,6 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1459C1F41F1006D5008B6262 /* PodRequester.swift in Sources */,
+				1459C1F21F1006A9008B6262 /* Pods.swift in Sources */,
 				141BFD6F1F0D831300D4533B /* Cat.swift in Sources */,
 				141BFD6D1F0D82BA00D4533B /* CatRequester.swift in Sources */,
 				141BFD4E1F0D5F8A00D4533B /* ViewController.swift in Sources */,
@@ -278,6 +286,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -333,6 +343,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;

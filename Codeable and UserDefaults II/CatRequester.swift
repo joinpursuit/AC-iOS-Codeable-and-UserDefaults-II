@@ -73,4 +73,20 @@ class CatRequester {
 			}
 			}.resume()
 	}
+	
+	func makeEpisodeRequest() {
+		let url = URL(string: "https://api.myjson.com/bins/n8pev")!
+		urlSession.dataTask(with: url) { (data: Data?, _, _) in
+			if data != nil {
+				do {
+					let episode = try JSONDecoder().decode(Episode.self, from: data!)
+					print("Episode: ", episode.number)
+					print(Date())
+				}
+				catch {
+					print("Error converting Data into Cat!")
+				}
+			}
+			}.resume()
+	}
 }

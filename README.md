@@ -152,7 +152,9 @@ for cat in catArrayContainer.cats {
 	print("\n\nNice to meet you, I'm ", cat.name)
 }
 ```
+
 > Image
+
 
 ### 2. Exercises
 
@@ -203,7 +205,6 @@ For each of these exercises, make sure that you're checking out the JSON respons
 }
 ```
 
-
 ---
 *Example 4*: https://api.myjson.com/bins/mn9t3
 
@@ -227,8 +228,95 @@ For each of these exercises, make sure that you're checking out the JSON respons
 }
 ```
 
+---
+*Example 5*: https://api.myjson.com/bins/18qgcn
 
-> Add exercises similar to part 1, host json on myjson
+- Create a new wrapper struct, `Pods`
+
+```json
+{
+  "pods": [
+    {
+      "podcast": "Pod Save America",
+      "producer": "Crooked Media",
+      "url": "https://itunes.apple.com/us/podcast/pod-save-america/id1192761536?mt=2",
+      "episodes": [
+        {
+          "title": "Making Redistricting Sexy Again...",
+          "time": "1hr 19min",
+          "released": "June 6 2017",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "podcast": "The Daily",
+      "producer": "New York Times",
+      "url": "https://itunes.apple.com/us/podcast/the-daily/id1200361736?mt=2",
+      "episodes": [
+        {
+          "title": "Friday July 7th",
+          "time": "22min",
+          "released": "June 7 2017",
+          "number": 1
+        }
+      ]
+    }
+  ]
+}
+```
+
+---
+*Example 6*: https://api.myjson.com/bins/7xv5z
+
+- Extend `Pods` to have a new property for `meta` data
+
+```json
+{
+    "meta": {
+        "date_requested": "2017-07-07 17:23:50 +0000"
+    },
+    "pods": [
+        {
+            "podcast": "Pod Save America",
+            "producer": "Crooked Media",
+            "url": "https://itunes.apple.com/us/podcast/pod-save-america/id1192761536?mt=2",
+            "episodes": [
+                {
+                    "title": "Making Redistricting Sexy Again...",
+                    "time": "1hr 19min",
+                    "released": "June 6 2017",
+                    "number": 1
+                }
+            ]
+        },
+        {
+            "podcast": "The Daily",
+            "producer": "New York Times",
+            "url": "https://itunes.apple.com/us/podcast/the-daily/id1200361736?mt=2",
+            "episodes": [
+                {
+                    "title": "Friday July 7th",
+                    "time": "22min",
+                    "released": "June 7 2017",
+                    "number": 1
+                }
+            ]
+        }
+    ]
+}
+```
+
+---
+#### *Advanced*: Formatting Time
+
+In example 6, you received a new key `meta` that had a single key/value `date`. That problem only requires you to express the date passed as a `String` but now you are tasked with parsing the value as a `Date` instead. You must convert the formatted date by using `DateFormatter` so that it reads: "Month Day, Year  <Hour:Minute>" in console.
+
+#### Resources For Advanced
+
+1. [Ultimate Guide to JSON Parsing with Swift 4](http://benscheirman.com/2017/06/ultimate-guide-to-json-parsing-with-swift-4/?utm_campaign=iOS%2BDev%2BWeekly&utm_medium=email&utm_source=iOS_Dev_Weekly_Issue_306)
+2. [NSDateFormatter.com](http://nsdateformatter.com/)
+
 
 
 

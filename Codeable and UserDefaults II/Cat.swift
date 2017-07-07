@@ -22,3 +22,10 @@ struct CatContainer: Codable {
 struct CatArrayContainer: Codable {
 	let cats: [Cat]
 }
+
+struct Episode: Codable {
+	let title: String
+	let time: String
+	let released: String
+	let number: Int
+}

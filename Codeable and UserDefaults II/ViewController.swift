@@ -14,11 +14,15 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		let requester = CatRequester()
+//		let requester = CatRequester()
 //		requester.makeBasicCatRequest()
 //		requester.makeKeyErrorCatRequest()
 //		requester.makeNestedDictionaryCatRequest()
-		requester.makeNestedArrayCatRequest()
+//		requester.makeNestedArrayCatRequest()
+//		requester.makeEpisodeRequest()
+		
+		let podRequester = PodRequester()
+		podRequester.example1Request()
 	}
 
 	override func didReceiveMemoryWarning() {
