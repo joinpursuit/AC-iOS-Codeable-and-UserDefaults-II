@@ -161,7 +161,7 @@ for cat in catArrayContainer.cats {
 For this set of exercises, follow these general guidelines:
 
 1. Create a new file, `Pods.swift` to add all of the structs you will be writing
-2. Create a new file, `PodRequestor` to create a request for each example problem. You should name these functions like `func example1Request`, `func example2Request`, etc...
+2. Create a new file, `PodRequestor.swift` to create a request for each example problem. You should name these functions like `func example1Request`, `func example2Request`, etc...
 3. Call each new request in either the `AppDelegate`'s `didFinishLaunching` or in `ViewController`'s `viewDidLoad`
 4. There are no tests for these exercises, so instead print out to console the result of each successful request. For example after creating a `Podcast` object, have `print("Podcast created: ",  podcast.podcast)`
 5. Exercise answers are provided to you under `Exercises/Exercises.md`. Be sure to attempt a problem before checking the answer
