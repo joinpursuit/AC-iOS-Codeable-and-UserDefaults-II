@@ -17,6 +17,7 @@
 		141BFD6F1F0D831300D4533B /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BFD6E1F0D831300D4533B /* Cat.swift */; };
 		1459C1F21F1006A9008B6262 /* Pods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C1F11F1006A9008B6262 /* Pods.swift */; };
 		1459C1F41F1006D5008B6262 /* PodRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C1F31F1006D5008B6262 /* PodRequester.swift */; };
+		1459C1F61F101D1C008B6262 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C1F51F101D1C008B6262 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		141BFD6E1F0D831300D4533B /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		1459C1F11F1006A9008B6262 /* Pods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pods.swift; sourceTree = "<group>"; };
 		1459C1F31F1006D5008B6262 /* PodRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodRequester.swift; sourceTree = "<group>"; };
+		1459C1F51F101D1C008B6262 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				1459C1F31F1006D5008B6262 /* PodRequester.swift */,
 				1459C1F11F1006A9008B6262 /* Pods.swift */,
 				141BFD6E1F0D831300D4533B /* Cat.swift */,
+				1459C1F51F101D1C008B6262 /* User.swift */,
 			);
 			path = "Codeable and UserDefaults II";
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				141BFD6D1F0D82BA00D4533B /* CatRequester.swift in Sources */,
 				141BFD4E1F0D5F8A00D4533B /* ViewController.swift in Sources */,
 				141BFD4C1F0D5F8A00D4533B /* AppDelegate.swift in Sources */,
+				1459C1F61F101D1C008B6262 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

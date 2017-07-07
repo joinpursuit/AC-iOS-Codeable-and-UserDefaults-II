@@ -158,7 +158,15 @@ for cat in catArrayContainer.cats {
 
 ### 2. Exercises
 
-For each of these exercises, make sure that you're checking out the JSON response for each URL using Postman. You will need that information in order to correctly create your data models.
+For this set of exercises, follow these general guidelines:
+
+1. Create a new file, `Pods.swift` to add all of the structs you will be writing
+2. Create a new file, `PodRequestor` to create a request for each example problem. You should name these functions like `func example1Request`, `func example2Request`, etc...
+3. Call each new request in either the `AppDelegate`'s `didFinishLaunching` or in `ViewController`'s `viewDidLoad`
+4. There are no tests for these exercises, so instead print out to console the result of each successful request. For example after creating a `Podcast` object, have `print("Podcast created: ",  podcast.podcast)`
+5. Exercise answers are provided to you under `Exercises/Exercises.md`. Be sure to attempt a problem before checking the answer
+
+> Note: For each of these exercises, make sure that you're checking out the JSON response for each URL using Postman. The response should match the snippets provided with the exercise questions, but you are to verify this.
 
 #### Pod(s) Save America
 
@@ -177,7 +185,7 @@ For each of these exercises, make sure that you're checking out the JSON respons
 ```
 
 ---
-*Example 2*: https://api.myjson.com/bins/182vl3
+*Example 2*:  `https://api.myjson.com/bins/182vl3`
 
 -  Create a new wrapper, `PodInfo` to house a `Podcast` object
 
@@ -192,7 +200,7 @@ For each of these exercises, make sure that you're checking out the JSON respons
 ```
 
 ---
-*Example 3*: https://api.myjson.com/bins/n8pev
+*Example 3*: `https://api.myjson.com/bins/n8pev`
 
 - Create a new struct, `Episode`
 
@@ -206,7 +214,7 @@ For each of these exercises, make sure that you're checking out the JSON respons
 ```
 
 ---
-*Example 4*: https://api.myjson.com/bins/mn9t3
+*Example 4*: `https://api.myjson.com/bins/mn9t3`
 
 - Expand `Pod` to include `[Episode]`
 
@@ -229,9 +237,9 @@ For each of these exercises, make sure that you're checking out the JSON respons
 ```
 
 ---
-*Example 5*: https://api.myjson.com/bins/18qgcn
+*Example 5*: `https://api.myjson.com/bins/18qgcn`
 
-- Create a new wrapper struct, `Pods`
+- Extend `PodInfo` to expect an array of `Podcast`
 
 ```json
 {
@@ -267,9 +275,9 @@ For each of these exercises, make sure that you're checking out the JSON respons
 ```
 
 ---
-*Example 6*: https://api.myjson.com/bins/7xv5z
+*Example 6*: `https://api.myjson.com/bins/7xv5z`
 
-- Extend `Pods` to have a new property for `meta` data
+- Extend `PodInfo` to have a new property for `meta` data. The `meta` property should be of type `PodMeta` and also `Codable`
 
 ```json
 {
@@ -304,6 +312,52 @@ For each of these exercises, make sure that you're checking out the JSON respons
             ]
         }
     ]
+}
+```
+
+####  Once More!
+
+The previous examples should have given you an understand on how you can start from a very simple JSON structure and build it up to into something far more complicated.
+
+In this last example, you will be challenged to do this entire building process on your own. You'll be using a URL from the  Random User API that I provide in order to create a few new structs. I will also provide you with a sample output JSON using that URL.
+
+What you'll need to do is the following:
+
+1. Create a wrapper, `APIResult` that will contain an array of `User` and a dictionary `Info`
+2. The `User` struct, will have several properties: `gender, email, registered`
+3. The `User` struct will also have several `Codable` properties: `name: Name, picture: Picture`
+4. The `Name` struct should have three properties: `title, first, last`
+5. The `Picture` struct should have three properties: `large, medium, thumbnail`
+6. The `Info` struct will have four properties: `seed, results, page, version`. Please be aware that `results` and `pages` are not `String`
+
+
+**URL**: `https://randomuser.me/api/?nat=us&inc=gender,name,email,registered,picture`
+
+```json
+{
+    "results": [
+        {
+            "gender": "male",
+            "name": {
+                "title": "mr",
+                "first": "cory",
+                "last": "wagner"
+            },
+            "email": "cory.wagner@example.com",
+            "registered": "2011-07-21 03:55:39",
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/17.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/17.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/17.jpg"
+            }
+        }
+    ],
+    "info": {
+        "seed": "a10c8066754a7d56",
+        "results": 1,
+        "page": 1,
+        "version": "1.1"
+    }
 }
 ```
 
@@ -560,15 +614,3 @@ The API sends back a nested structure, but our code isn't currently ready to han
 #### Dealing with `[User]`
 
 We've already handled a situation where we have an array of `Codable` objects that are being parsed when working with the `Cart` and `CartStorageManager` earlier. We just need to adapt our code to do the same.
-
-
-
-
-
-
-
->>>> TODO:
-1. Attempt to update code in existing request
-2. explain need for nesting considerations
-3. exercises! include nesting, using custom keys, enums/structs, and advanced will be dynamic keys
-4. Split into 2 lessons...

@@ -22,7 +22,15 @@ class ViewController: UIViewController {
 //		requester.makeEpisodeRequest()
 		
 		let podRequester = PodRequester()
-		podRequester.example1Request()
+//		podRequester.example1Request()
+//		podRequester.example2Request()
+//		podRequester.example3Request()
+//		podRequester.example4Request()
+//		podRequester.example5Request()
+		podRequester.example6Request()
+		
+		let userRequester = UserRequester()
+		userRequester.makeRequest()
 	}
 
 	override func didReceiveMemoryWarning() {
