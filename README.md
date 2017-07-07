@@ -66,7 +66,7 @@ func makeBasicCatRequest() {
 }
 ```
 
-> Image
+![Nice to meet a cat](./Images/basic_decoder.png)
 
 #### Incorrectly Named JSON Keys
 
@@ -82,7 +82,7 @@ Ok, now replace `example1URL` with `example2URL` and observe the difference. Put
 
 With `fullname` no longer matching a `Cat.name` property, attempting to decode results in an error.
 
-> Image
+![Wrong Keys](./Images/keyed_error_decoder.png)
 
 #### Nested JSON Structure
 
@@ -153,7 +153,7 @@ for cat in catArrayContainer.cats {
 }
 ```
 
-> Image
+![Meet a couple of cats](./Images/array_decoded.png)
 
 
 ### 2. Exercises
@@ -364,7 +364,21 @@ What you'll need to do is the following:
 ---
 #### *Advanced*: Formatting Time
 
-In example 6, you received a new key `meta` that had a single key/value `date`. That problem only requires you to express the date passed as a `String` but now you are tasked with parsing the value as a `Date` instead. You must convert the formatted date by using `DateFormatter` so that it reads: "Month Day, Year  <Hour:Minute>" in console.
+![Advanced output](./Images/advanced_pod_solution.png)
+
+In example 6, you received a new key `meta` that had a single key/value `date`. That problem only requires you to express the date passed as a `String` but now you are tasked with parsing the value as a `Date` instead. You must convert the formatted date by using `DateFormatter` so that it reads: `"Month Day, Year  <Hour:Minute>"` in console.
+
+<detail>
+<summary>Implementation hints</summary>
+<br><br>
+<ol>
+<li> You're going to need to create & use <code>DateFormatter</code>
+<li> You need to change <code>Meta.date_requested</code> from a <code>String</code> to <code>Date</code>
+<li> You'll need to change <code>JSONDecoder</code>'s <code>dateDecodingStrategy</code> to <code>.dateFormatted(DateFormatter)</code>
+<li> You're going to need to update your <code>DateFormatter</code>'s <code>.dateFormat</code> property twice: once for decoding the string value of the date from the JSON into <code>Date</code> and then once again to output the <code>Date</code> as a <code>String</code>
+</ol>
+<br><br>
+</detail>
 
 #### Resources For Advanced
 
