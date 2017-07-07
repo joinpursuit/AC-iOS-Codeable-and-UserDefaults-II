@@ -368,7 +368,7 @@ What you'll need to do is the following:
 
 In example 6, you received a new key `meta` that had a single key/value `date`. That problem only requires you to express the date passed as a `String` but now you are tasked with parsing the value as a `Date` instead. You must convert the formatted date by using `DateFormatter` so that it reads: `"Month Day, Year  <Hour:Minute>"` in console.
 
-<detail>
+<details>
 <summary>Implementation hints</summary>
 <br><br>
 <ol>
@@ -378,7 +378,7 @@ In example 6, you received a new key `meta` that had a single key/value `date`. 
 <li> You're going to need to update your <code>DateFormatter</code>'s <code>.dateFormat</code> property twice: once for decoding the string value of the date from the JSON into <code>Date</code> and then once again to output the <code>Date</code> as a <code>String</code>
 </ol>
 <br><br>
-</detail>
+</details>
 
 #### Resources For Advanced
 
