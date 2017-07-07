@@ -43,4 +43,34 @@ class CatRequester {
 			}
 			}.resume()
 	}
+	
+	func makeNestedDictionaryCatRequest() {
+		urlSession.dataTask(with: example3URL) { (data: Data?, _, _) in
+			if data != nil {
+				do {
+					let catContainer = try JSONDecoder().decode(CatContainer.self, from: data!)
+					print("\n\nNice to meet you, I'm ", catContainer.cat.name)
+				}
+				catch {
+					print("Error converting Data into Cat!")
+				}
+			}
+			}.resume()
+	}
+	
+	func makeNestedArrayCatRequest() {
+		urlSession.dataTask(with: example4URL) { (data: Data?, _, _) in
+			if data != nil {
+				do {
+					let catArrayContainer = try JSONDecoder().decode(CatArrayContainer.self, from: data!)
+					for cat in catArrayContainer.cats {
+						print("\n\nNice to meet you, I'm ", cat.name)
+					}
+				}
+				catch {
+					print("Error converting Data into Cat!")
+				}
+			}
+			}.resume()
+	}
 }

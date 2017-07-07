@@ -13,3 +13,12 @@ struct Cat: Codable {
 	let breed: String
 	let snack: String
 }
+
+// Nested Cat object wrapped in a "cat" key
+struct CatContainer: Codable {
+	let cat: Cat
+}
+
+struct CatArrayContainer: Codable {
+	let cats: [Cat]
+}

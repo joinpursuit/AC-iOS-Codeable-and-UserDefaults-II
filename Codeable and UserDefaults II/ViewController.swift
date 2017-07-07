@@ -15,8 +15,10 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		let requester = CatRequester()
-		requester.makeBasicCatRequest()
-		requester.makeKeyErrorCatRequest()
+//		requester.makeBasicCatRequest()
+//		requester.makeKeyErrorCatRequest()
+//		requester.makeNestedDictionaryCatRequest()
+		requester.makeNestedArrayCatRequest()
 	}
 
 	override func didReceiveMemoryWarning() {

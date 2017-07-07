@@ -27,12 +27,14 @@ struct Cat: Codable {
 
 We'll be using the provided `CatRequester` to make our API requests. At the top of the class you'll notice a list of `URL` to use for various examples:
 
-> TODO: ADD MORE
-
 ```swift
 	let example1URL = URL(string: "https://api.myjson.com/bins/1h4707")!
 	let example2URL = URL(string: "https://api.myjson.com/bins/fq67r")!
+	let example3URL = URL(string: "https://api.myjson.com/bins/oatbr")!
+	let example4URL = URL(string: "https://api.myjson.com/bins/vg0l3")!
 ```
+
+#### Basic JSON Request
 
 We're first going fill out the function labeled `makeBasicCatRequest` and make a request using `example1URL`. If we plug in `example1URL` into Postman, we get
 
@@ -64,6 +66,10 @@ func makeBasicCatRequest() {
 }
 ```
 
+> Image
+
+#### Incorrectly Named JSON Keys
+
 Ok, now replace `example1URL` with `example2URL` and observe the difference. Putting in `example2URL` into Postman gives us:
 
 ```json
@@ -76,13 +82,11 @@ Ok, now replace `example1URL` with `example2URL` and observe the difference. Put
 
 With `fullname` no longer matching a `Cat.name` property, attempting to decode results in an error.
 
-> TODO: add more examples
-> - Nested example
-> - Array Example
-> Add exercises similar to part 1, host json on myjson
+> Image
 
+#### Nested JSON Structure
 
-# 3
+Let's now take a look at a nested dictionary structure. Replace `example2URL` with `example3URL` and verify that in Postman you're getting this JSON response:
 
 ```json
 {
@@ -94,7 +98,26 @@ With `fullname` no longer matching a `Cat.name` property, attempting to decode r
 }
 ```
 
-# 4
+In this example, our `Cat` dictionary is wrapped up using a `"cat"` key/value pair. To access the deeper level of the dictionary, (to get `name`, `breed`, and `snack`) we can simply create a wrapper struct like so:
+
+```swift
+// Nested Cat object wrapped in a "cat" key
+struct CatContainer: Codable {
+	let cat: Cat
+}
+```
+
+Now, we just need to update the code so that `JSONDecoder` expects to decode a `CatContainer` rather than a `Cat` directly.
+
+```swift
+	// just change the expected type from `Cat` to `CatContainer`!
+	let catContainer = try JSONDecoder().decode(CatContainer.self, from: data!)
+	print("\n\nNice to meet you, I'm ", catContainer.cat.name)
+```
+
+#### JSON Array Structure
+
+Let's look at one more example where the root object is an array of `Cats`. We're going to use `example4URL` which should have a JSON response like:
 
 ```json
 {
@@ -113,10 +136,99 @@ With `fullname` no longer matching a `Cat.name` property, attempting to decode r
 }
 ```
 
+ You might already be able to guess what needs to be done for this to work... make a wrapper struct!
+
+```swift
+struct CatArrayContainer: Codable {
+	let cats: [Cat]
+}
+```
+
+And now we just update our `JSONDecoder` code to make use of the new wrapper:
+
+```swift
+let catArrayContainer = try JSONDecoder().decode(CatArrayContainer.self, from: data!)
+for cat in catArrayContainer.cats {
+	print("\n\nNice to meet you, I'm ", cat.name)
+}
+```
+> Image
+
+### 2. Exercises
+
+For each of these exercises, make sure that you're checking out the JSON response for each URL using Postman. You will need that information in order to correctly create your data models.
+
+#### Pod(s) Save America
+
+---
+*Example 1*: `https://api.myjson.com/bins/tq46v`
+
+- Create a new model, `Podcast` that conforms to `Codable`
+- Make a request the the URL listed and create an instance of `Podcast`
+
+```json
+{
+    "podcast": "Pod Save America",
+    "producer": "Crooked Media",
+    "url": "https://itunes.apple.com/us/podcast/pod-save-america/id1192761536?mt=2"
+}
+```
+
+---
+*Example 2*: https://api.myjson.com/bins/182vl3
+
+-  Create a new wrapper, `PodInfo` to house a `Podcast` object
+
+```json
+{
+    "pod": {
+        "podcast": "Pod Save America",
+        "producer": "Crooked Media",
+        "url": "https://itunes.apple.com/us/podcast/pod-save-america/id1192761536?mt=2"
+    }
+}
+```
+
+---
+*Example 3*: https://api.myjson.com/bins/n8pev
+
+- Create a new struct, `Episode`
+
+```json
+{
+  "title": "Making Redistricting Sexy Again...",
+  "time": "1hr 19min",
+  "released": "June 6 2017",
+  "number": 1
+}
+```
 
 
+---
+*Example 4*: https://api.myjson.com/bins/mn9t3
+
+- Expand `Pod` to include `[Episode]`
+
+```json
+{
+    "pod": {
+        "podcast": "Pod Save America",
+        "producer": "Crooked Media",
+        "url": "https://itunes.apple.com/us/podcast/pod-save-america/id1192761536?mt=2",
+        "episodes": [
+            {
+                "title": "Making Redistricting Sexy Again...",
+                "time": "1hr 19min",
+                "released": "June 6 2017",
+                "number": 1
+            }
+        ]
+    }
+}
+```
 
 
+> Add exercises similar to part 1, host json on myjson
 
 
 
