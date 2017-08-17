@@ -1,12 +1,14 @@
 # AC-iOS Codable and UserDefaults: Part II JSON Codables (Swift 4.x)
 
----
 ### Readings
 1. [Ultimate Guide to Parsing With Swift](http://benscheirman.com/2017/06/ultimate-guide-to-json-parsing-with-swift-4/?utm_campaign=iOS%2BDev%2BWeekly&utm_medium=email&utm_source=iOS_Dev_Weekly_Issue_306)
 1. [An Introduction to NSUserDefaults](http://www.codingexplorer.com/nsuserdefaults-a-swift-introduction/)
 
+#### Required Resources
+1. [Postman via Chrome Store](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 
-### 0. Overall Goals
+---
+### 0. Objectives
 
 1. Become familiar with using `UserDefaults` to store data
 2. Understand that `UserDefaults` is a light-weight, persistant storage option for small amounts of data that relate to how your app should be configured, based on the user's selection/choices.
@@ -36,7 +38,7 @@ We'll be using the provided `CatRequester` to make our API requests. At the top 
 
 #### Basic JSON Request
 
-We're first going fill out the function labeled `makeBasicCatRequest` and make a request using `example1URL`. If we plug in `example1URL` into Postman, we get
+We're first going fill out the function labeled `makeBasicCatRequest` and make a request using `example1URL`. If we plug in `example1URL` into [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en), we get
 
 ```json
 {
@@ -46,7 +48,7 @@ We're first going fill out the function labeled `makeBasicCatRequest` and make a
 }
 ```
 
-The key to using a model that conforms to `Codable` along with `JSONDecoder` is to ensure that the names of instance properties of the model match the keys in the JSON response. Our `Cat` model has three properties, `name, breed, snack` which correspond to the keys being returned in the JSON response, `name, breed` and snack. You don't have to know the full details yet on how this works, but just understand that this is how you make this kind of decoding work.
+The key to using a model that conforms to `Codable` along with `JSONDecoder` is to ensure that the names of instance properties of the model match the keys in the JSON response. Our `Cat` model has three properties, `name, breed, snack` which correspond to the keys being returned in the JSON response, `name, breed` and `snack`. You don't have to know the full details yet on how this works, but just understand that this is how you make this kind of decoding work.
 
 Now, we'll do a basic `URLSession` data task to make a model:
 
@@ -80,7 +82,7 @@ Ok, now replace `example1URL` with `example2URL` and observe the difference. Put
 }
 ```
 
-With `fullname` no longer matching a `Cat.name` property, attempting to decode results in an error.
+With the `JSON` key (`fullname`) no longer matching the model's property name (`Cat.name`), attempting to decode results in an error.
 
 ![Wrong Keys](./Images/keyed_error_decoder.png)
 
@@ -155,12 +157,12 @@ for cat in catArrayContainer.cats {
 
 ![Meet a couple of cats](./Images/array_decoded.png)
 
-
+---
 ### 2. Exercises
 
 For this set of exercises, follow these general guidelines:
 
-1. Create a new file, `Pods.swift` to add all of the structs you will be writing
+1. Create a new empty swift file named `Pods.swift` to add all of the structs you will be writing
 2. Create a new file, `PodRequestor.swift` to create a request for each example problem. You should name these functions like `func example1Request`, `func example2Request`, etc...
 3. Call each new request in either the `AppDelegate`'s `didFinishLaunching` or in `ViewController`'s `viewDidLoad`
 4. There are no tests for these exercises, so instead print out to console the result of each successful request. For example after creating a `Podcast` object, have `print("Podcast created: ",  podcast.podcast)`
@@ -315,7 +317,8 @@ For this set of exercises, follow these general guidelines:
 }
 ```
 
-####  Once More!
+---
+###  Once More With Gusto!
 
 The previous examples should have given you an understand on how you can start from a very simple JSON structure and build it up to into something far more complicated.
 
