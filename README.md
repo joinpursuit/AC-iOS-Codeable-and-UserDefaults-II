@@ -367,7 +367,7 @@ What you'll need to do is the following:
 ---
 #### *Advanced*: Formatting Time
 
-![Advanced output](./Images/advanced_pod_solution.png)
+![Advanced output](./Images/%20advanced_pod_solution.png)
 
 In example 6, you received a new key `meta` that had a single key/value `date`. That problem only requires you to express the date passed as a `String` but now you are tasked with parsing the value as a `Date` instead. You must convert the formatted date by using `DateFormatter` so that it reads: `"Month Day, Year  <Hour:Minute>"` in console.
 
